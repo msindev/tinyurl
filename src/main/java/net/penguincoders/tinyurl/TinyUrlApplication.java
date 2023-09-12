@@ -2,12 +2,13 @@ package net.penguincoders.tinyurl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @SpringBootApplication
+@EnableMongoAuditing
 public class TinyUrlApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TinyUrlApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(TinyUrlApplication.class, args);
+    }
 }
