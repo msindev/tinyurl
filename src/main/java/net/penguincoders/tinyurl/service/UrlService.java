@@ -2,7 +2,6 @@ package net.penguincoders.tinyurl.service;
 
 import net.penguincoders.tinyurl.dao.CounterDao;
 import net.penguincoders.tinyurl.model.Url;
-import net.penguincoders.tinyurl.repository.CounterRepository;
 import net.penguincoders.tinyurl.repository.UrlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +10,6 @@ import java.util.Optional;
 
 @Service
 public class UrlService {
-
-    @Autowired
-    private CounterRepository counterRepository;
 
     @Autowired
     private CounterDao counterDao;
