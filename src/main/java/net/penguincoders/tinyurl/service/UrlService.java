@@ -25,7 +25,7 @@ public class UrlService {
 
         long counter = counterDao.getCounter();
         counterDao.setCounter(counter + 1);
-        String newTinyUrl = "http://tinyurl.com/" + convertNumberToBase62(counter);
+        String newTinyUrl = convertNumberToBase62(counter);
 
         Url newUrl = new Url();
         newUrl.setUrl(url);
@@ -48,5 +48,10 @@ public class UrlService {
             num /= 62;
         }
         return result.toString();
+    }
+
+    public String getOriginalUrlByShortUrl(String shortUrl) {
+        Url url = urlRepository.findByTinyUrl(shortUrl).orElse(null);
+        return url != null ? url.getUrl() : null;
     }
 }

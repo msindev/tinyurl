@@ -8,4 +8,6 @@ import java.util.Optional;
 
 public interface UrlRepository extends MongoRepository<Url, ObjectId> {
     Optional<Url> findByUrl(String url);
+
+    Optional<Url> findByTinyUrl(String tinyUrl);
 }
